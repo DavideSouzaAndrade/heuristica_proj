@@ -121,12 +121,14 @@ Em `reports/figures/cp1/`:
 ## 8. Reprodutibilidade
 
 ```bash
+git clone https://github.com/DavideSouzaAndrade/heuristica_proj.git
+cd heuristica_proj
 pip install -r requirements.txt
 python -m src.experiment --instance cp1 --seeds 5
 python notebooks/checkpoint1_figures.py
 ```
 
-Repositório: a ser publicado no GitHub antes do pré-final (Semana 15).
+Repositório público: https://github.com/DavideSouzaAndrade/heuristica_proj — commit do CP1 = `a03114d`.
 
 ## 9. Declaração de uso de IA generativa
 

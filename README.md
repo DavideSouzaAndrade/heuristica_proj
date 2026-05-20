@@ -2,6 +2,8 @@
 
 Resolução do Problema do Caixeiro Viajante com Janelas de Tempo (TSPTW) com metaheurísticas, em cumprimento ao Projeto Final da disciplina **INF0415 — Heurísticas e Modelagem Multiobjetivo** (Bacharelado em Inteligência Artificial, UFG, 2026/2).
 
+Repositório: https://github.com/DavideSouzaAndrade/heuristica_proj
+
 ## Equipe
 
 | Nome | Matrícula |
