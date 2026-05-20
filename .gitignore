@@ -10,4 +10,4 @@ env/
 .vscode/
 
 # Heavy random search history arrays — regeneráveis via `src/experiment.py`
-results/runs/**/*_random_history_best.npy
+entregas/**/resultados/**/*_random_history_best.npy

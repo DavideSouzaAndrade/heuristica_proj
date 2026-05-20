@@ -3,9 +3,9 @@
 Pré-requisito: ter executado
     python -m src.experiment --instance cp1 --seeds 5 --tag cp1
 
-Saídas (em reports/figures/cp1/):
+Saídas (em entregas/cp1/figuras/):
     fig1_convergencia.png    — curva de convergência média ± desvio
-    fig2_boxplot.png         — distribuição de distância por instância (GA vs NN)
+    fig2_boxplot.png         — distribuição de distância por instância (GA vs NN vs Random)
     fig3_rota.png            — melhor tour encontrado em n20w20.001 + linha do tempo
     fig4_viabilidade.png     — taxa de viabilidade por largura de janela
 """
@@ -28,8 +28,8 @@ from src.ga import GAConfig, run_ga  # noqa: E402
 from src.instance import load_dumas  # noqa: E402
 
 TAG = "cp1"
-RUNS_DIR = ROOT / "results" / "runs" / TAG
-FIG_DIR = ROOT / "reports" / "figures" / TAG
+RUNS_DIR = ROOT / "entregas" / TAG / "resultados"
+FIG_DIR = ROOT / "entregas" / TAG / "figuras"
 FIG_DIR.mkdir(parents=True, exist_ok=True)
 
 INSTANCES = [

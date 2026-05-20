@@ -61,7 +61,7 @@ Cinco sementes atendem à exigência mínima do Checkpoint 1; a entrega final us
 * **Cliff's δ** — não-paramétrico, ∈ [−1, 1]; magnitude por Romano et al. (2006): |δ|<0,147 negligível, <0,33 pequeno, <0,474 médio, ≥0,474 grande.
 * **Hedges' g** — versão de Cohen's d com correção de bias para amostras pequenas; |g|>0,8 é grande.
 
-Resultados salvos em `results/runs/cp1/<instância>/`.
+Resultados salvos em `entregas/cp1/resultados/<instância>/`.
 
 ## 5. Resultados
 
@@ -93,7 +93,7 @@ Em todas as cinco instâncias, **Cliff's δ = −1,000** (grande, magnitude máx
 
 ### 5.3 Figuras
 
-Em `reports/figures/cp1/`:
+Em `entregas/cp1/figuras/`:
 
 * `fig1_convergencia.png` — melhor fitness por geração do AG, média ± desvio sobre 5 sementes, uma curva por instância. A escala log evidencia o "degrau" quando o AG empurra a solução para a região factível: o fitness cai de ≈10⁵ (dominado pela penalização Σ violação · λ) para ≈10² (apenas distância).
 * `fig2_boxplot.png` — boxplots de AG (azul) vs. busca aleatória (cinza), com NN como losango vermelho. As caixas do AG ficam abaixo de todas as referências em todas as instâncias; a folga até o Random ancora a magnitude do ganho da meta-heurística.

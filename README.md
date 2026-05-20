@@ -18,9 +18,9 @@ Repositório: https://github.com/DavideSouzaAndrade/heuristica_proj
 
 | Semana | Marco | Estado |
 |---|---|---|
-| 9 | Proposta | concluído (`proposta_tsptw.md`) |
-| 11 | Checkpoint 1 — single-objective + baseline + 5 sementes | em andamento |
-| 13 | Checkpoint 2 — NSGA-II multiobjetivo | pendente |
+| 9 | Proposta | ✅ entregue ([`entregas/proposta/proposta_tsptw.md`](entregas/proposta/proposta_tsptw.md)) |
+| 11 | Checkpoint 1 — single-objective + baseline + 5 sementes | ✅ entregue ([`entregas/cp1/`](entregas/cp1/), tag `cp1`) |
+| 13 | Checkpoint 2 — NSGA-II multiobjetivo | em andamento |
 | 15 | Pré-final — diferencial + relatório 70% | pendente |
 | 16 | Entrega final | pendente |
 
@@ -28,28 +28,43 @@ Repositório: https://github.com/DavideSouzaAndrade/heuristica_proj
 
 ```
 heuristica_final/
-├── data/dumas/           # instâncias TSPTW (formato Dumas)
-├── src/                  # código-fonte
-│   ├── instance.py       # carregamento das instâncias
-│   ├── evaluation.py     # função objetivo TSPTW
-│   ├── baseline_nn.py    # baseline Nearest Neighbor com janelas
-│   ├── operators.py      # operadores genéticos (OX, mutação, seleção)
-│   ├── ga.py             # algoritmo genético
-│   └── experiment.py     # runner experimental com sementes
-├── notebooks/            # análises e figuras
-├── reports/              # entregas dos checkpoints
-└── results/              # logs e tabelas geradas
+├── data/dumas/             # instâncias TSPTW (formato Dumas)
+├── src/                    # código-fonte (compartilhado entre checkpoints)
+│   ├── instance.py         # carregamento de instâncias
+│   ├── evaluation.py       # função objetivo TSPTW penalizada
+│   ├── baseline_nn.py      # baseline Nearest Neighbor (urgency)
+│   ├── baseline_random.py  # busca aleatória (referência inferior)
+│   ├── operators.py        # operadores genéticos (OX, inversão, torneio)
+│   ├── ga.py               # algoritmo genético single-objective
+│   ├── stats.py            # Cliff's delta + Hedges' g
+│   └── experiment.py       # runner experimental
+├── notebooks/              # scripts de análise/figuras (um por checkpoint)
+│   └── checkpoint1_figures.py
+└── entregas/               # artefatos congelados por entrega
+    ├── proposta/           # Semana 9 — proposta inicial
+    │   └── proposta_tsptw.md
+    └── cp1/                # Semana 11 — Checkpoint 1
+        ├── checkpoint1.md  # relatório
+        ├── figuras/        # 4 figuras PNG
+        └── resultados/     # CSVs, summaries, históricos de convergência
 ```
 
-## Como reproduzir (Checkpoint 1)
+O código (`src/`, `data/`, `notebooks/`) é uma única fonte de verdade que evolui ao longo do projeto. Cada entrega vira uma pasta congelada em `entregas/` e uma tag Git (`cp1`, `cp2`, ...) que permite recuperar o estado exato do código naquele momento via `git checkout <tag>`.
+
+## Como reproduzir o Checkpoint 1
 
 ```bash
+git clone https://github.com/DavideSouzaAndrade/heuristica_proj.git
+cd heuristica_proj
+git checkout cp1                       # opcional: snapshot exato da entrega
 pip install -r requirements.txt
-python -m src.experiment --instance data/dumas/n20w20.001.txt --seeds 5
-jupyter notebook notebooks/checkpoint1.ipynb
+python -m src.experiment --instance cp1 --seeds 5
+python notebooks/checkpoint1_figures.py
 ```
+
+Saídas vão direto para `entregas/cp1/resultados/` e `entregas/cp1/figuras/`.
 
 ## Referência
 
-- Documento do projeto: `heuristica_trab_final.pdf`
-- Proposta entregue (Semana 9): `proposta_tsptw.md`
+- Enunciado oficial da disciplina: `heuristica_trab_final.pdf` (na raiz, não é entrega nossa)
+- Proposta inicial (Semana 9): [`entregas/proposta/proposta_tsptw.md`](entregas/proposta/proposta_tsptw.md)

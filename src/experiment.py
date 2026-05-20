@@ -8,7 +8,7 @@ Para cada instância TSPTW:
     * Coleta para cada semente: distância, violação, viabilidade, fitness,
       histórico de melhor/média e tempo de parede.
     * Calcula efeito (Cliff's delta + Hedges' g) AG vs NN e AG vs Random.
-    * Persiste em CSV e JSON sob `results/runs/<tag>/<instance>/`.
+    * Persiste em CSV e JSON sob `entregas/<tag>/resultados/<instance>/`.
     * Imprime no stdout um sumário por instância.
 
 Uso:
@@ -219,7 +219,8 @@ def main() -> None:
     else:
         files = [Path(args.instance)]
 
-    out_root = Path("results/runs") / args.tag
+    out_root = Path("entregas") / args.tag / "resultados"
+    out_root.mkdir(parents=True, exist_ok=True)
     summaries = []
     for f in files:
         s = run_one(f, seeds, cfg, out_root / f.stem)
