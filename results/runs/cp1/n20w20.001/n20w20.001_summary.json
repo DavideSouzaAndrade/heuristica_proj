@@ -1,0 +1,98 @@
+{
+  "instance": "n20w20.001",
+  "n_customers": 20,
+  "baseline_nn": {
+    "distance": 386.0,
+    "violation": 314.0,
+    "n_violations": 1,
+    "feasible": false
+  },
+  "random": {
+    "n_evals_per_seed": 300000,
+    "feasible_rate": 0.0,
+    "distance": {
+      "mean": 426.2,
+      "std": 9.884331034521253,
+      "median": 425.0,
+      "min": 413.0,
+      "max": 439.0
+    },
+    "violation": {
+      "mean": 1307.4,
+      "std": 85.14869347206685,
+      "median": 1278.0,
+      "min": 1230.0,
+      "max": 1431.0
+    },
+    "fitness": {
+      "mean": 1307826.2,
+      "std": 85151.5261031768,
+      "median": 1278439.0,
+      "min": 1230422.0,
+      "max": 1431425.0
+    },
+    "time_s": {
+      "mean": 28.695113339996897,
+      "std": 4.170589009954298,
+      "median": 26.752729199943133,
+      "min": 25.840092199970968,
+      "max": 35.9809694000287
+    }
+  },
+  "ga_config": {
+    "pop_size": 200,
+    "n_generations": 1500,
+    "tournament_k": 3,
+    "p_crossover": 0.9,
+    "p_mutation": 0.3,
+    "elite": 2,
+    "lam": 1000.0,
+    "mutation_op": "inversion"
+  },
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "feasible_rate": 0.4,
+  "distance": {
+    "mean": 377.0,
+    "std": 1.7320508075688772,
+    "median": 378.0,
+    "min": 374.0,
+    "max": 378.0
+  },
+  "violation": {
+    "mean": 165.6,
+    "std": 179.40819379281425,
+    "median": 136.0,
+    "min": 0.0,
+    "max": 409.0
+  },
+  "fitness": {
+    "mean": 165977.0,
+    "std": 179408.19519464544,
+    "median": 136374.0,
+    "min": 378.0,
+    "max": 409378.0
+  },
+  "time_s": {
+    "mean": 31.25739436002914,
+    "std": 0.9215658875337509,
+    "median": 30.88081860006787,
+    "min": 30.595148400054313,
+    "max": 32.800868900027126
+  },
+  "effect_ga_vs_nn": {
+    "cliffs_delta": -1.0,
+    "cliffs_magnitude": "grande",
+    "hedges_g": -4.156921938165306
+  },
+  "effect_ga_vs_random": {
+    "cliffs_delta": -1.0,
+    "cliffs_magnitude": "grande",
+    "hedges_g": -6.262701362621216
+  }
+}

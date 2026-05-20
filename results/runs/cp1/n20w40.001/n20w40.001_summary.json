@@ -1,0 +1,98 @@
+{
+  "instance": "n20w40.001",
+  "n_customers": 20,
+  "baseline_nn": {
+    "distance": 282.0,
+    "violation": 71.0,
+    "n_violations": 1,
+    "feasible": false
+  },
+  "random": {
+    "n_evals_per_seed": 300000,
+    "feasible_rate": 0.0,
+    "distance": {
+      "mean": 347.2,
+      "std": 25.665151470427755,
+      "median": 347.0,
+      "min": 312.0,
+      "max": 376.0
+    },
+    "violation": {
+      "mean": 943.4,
+      "std": 150.91487666893545,
+      "median": 872.0,
+      "min": 797.0,
+      "max": 1153.0
+    },
+    "fitness": {
+      "mean": 943747.2,
+      "std": 150918.5573701922,
+      "median": 872367.0,
+      "min": 797347.0,
+      "max": 1153376.0
+    },
+    "time_s": {
+      "mean": 26.186870039976203,
+      "std": 0.654900585443585,
+      "median": 26.164319499977864,
+      "min": 25.308954900014214,
+      "max": 27.126314499997534
+    }
+  },
+  "ga_config": {
+    "pop_size": 200,
+    "n_generations": 1500,
+    "tournament_k": 3,
+    "p_crossover": 0.9,
+    "p_mutation": 0.3,
+    "elite": 2,
+    "lam": 1000.0,
+    "mutation_op": "inversion"
+  },
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "feasible_rate": 0.6,
+  "distance": {
+    "mean": 253.2,
+    "std": 1.0954451150103321,
+    "median": 254.0,
+    "min": 252.0,
+    "max": 254.0
+  },
+  "violation": {
+    "mean": 18.8,
+    "std": 41.48132109757355,
+    "median": 0.0,
+    "min": 0.0,
+    "max": 93.0
+  },
+  "fitness": {
+    "mean": 19053.2,
+    "std": 41480.64128241028,
+    "median": 254.0,
+    "min": 254.0,
+    "max": 93252.0
+  },
+  "time_s": {
+    "mean": 32.73624209999107,
+    "std": 3.0854601840112172,
+    "median": 31.0478816999821,
+    "min": 30.432413999922574,
+    "max": 37.78130000003148
+  },
+  "effect_ga_vs_nn": {
+    "cliffs_delta": -1.0,
+    "cliffs_magnitude": "grande",
+    "hedges_g": -21.03254620819839
+  },
+  "effect_ga_vs_random": {
+    "cliffs_delta": -1.0,
+    "cliffs_magnitude": "grande",
+    "hedges_g": -4.67412287139366
+  }
+}
