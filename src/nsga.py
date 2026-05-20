@@ -115,6 +115,12 @@ class NSGAConfig:
     pop_size: int = 100
     n_generations: int = 1500
     p_mutation: float = 0.3
+    # Memetic (D1): aplica 2-opt Pareto a cada `memetic_period` gerações
+    # em `memetic_top_k` indivíduos da fronteira atual. Se memetic_period=0,
+    # desabilita a hibridização (modo NSGA-II puro do CP2).
+    memetic_period: int = 0
+    memetic_top_k: int = 5
+    memetic_max_iter: int = 5
 
 
 @dataclass
@@ -134,6 +140,42 @@ def _front_from_pop(pop) -> np.ndarray:
     return np.asarray(F)
 
 
+def _apply_local_search(algorithm, inst: TSPTWInstance, cfg: NSGAConfig) -> int:
+    """Aplica 2-opt Pareto a indivíduos da fronteira atual da população do pymoo.
+
+    Retorna o número de indivíduos efetivamente modificados (para diagnóstico).
+    """
+    from pymoo.util.nds.non_dominated_sorting import NonDominatedSorting
+
+    from .local_search import two_opt_pareto
+
+    pop = algorithm.pop
+    F = pop.get("F")
+    if F is None or len(F) == 0:
+        return 0
+
+    nds = NonDominatedSorting()
+    front_idx = nds.do(F, only_non_dominated_front=True)
+    if len(front_idx) == 0:
+        return 0
+
+    k = min(cfg.memetic_top_k, len(front_idx))
+    chosen = np.random.choice(front_idx, size=k, replace=False)
+
+    n_modified = 0
+    for idx in chosen:
+        ind = pop[int(idx)]
+        x_old = np.asarray(ind.X, dtype=np.int64)
+        new_x, new_ev = two_opt_pareto(inst, x_old, max_iter=cfg.memetic_max_iter)
+        if not np.array_equal(new_x, x_old):
+            ind.set("X", new_x)
+            ind.set("F", np.array([new_ev.distance, new_ev.violation],
+                                  dtype=np.float64))
+            n_modified += 1
+
+    return n_modified
+
+
 def run_nsga(
     inst: TSPTWInstance,
     config: NSGAConfig | None = None,
@@ -150,21 +192,40 @@ def run_nsga(
         eliminate_duplicates=PermutationDup(),
     )
 
-    res = minimize(
-        problem,
-        algorithm,
-        ("n_gen", cfg.n_generations),
-        seed=int(seed),
-        verbose=False,
-        save_history=True,
-    )
+    memetic_enabled = cfg.memetic_period > 0
 
-    front_F = np.asarray(res.F)
-    front_X = np.asarray(res.X, dtype=np.int64)
-
-    history_F: list[np.ndarray] = []
-    for entry in res.history:
-        history_F.append(_front_from_pop(entry.opt))
+    if not memetic_enabled:
+        # Modo puro (CP2) — usa o minimize() do pymoo
+        res = minimize(
+            problem,
+            algorithm,
+            ("n_gen", cfg.n_generations),
+            seed=int(seed),
+            verbose=False,
+            save_history=True,
+        )
+        front_F = np.asarray(res.F)
+        front_X = np.asarray(res.X, dtype=np.int64)
+        history_F = [
+            _front_from_pop(entry.opt) for entry in res.history
+        ]
+    else:
+        # Modo memetic — stepping manual para intercalar 2-opt
+        algorithm.setup(
+            problem,
+            termination=("n_gen", cfg.n_generations),
+            seed=int(seed),
+            verbose=False,
+        )
+        history_F = []
+        while algorithm.has_next():
+            algorithm.next()
+            history_F.append(_front_from_pop(algorithm.opt))
+            if algorithm.n_gen % cfg.memetic_period == 0:
+                _apply_local_search(algorithm, inst, cfg)
+        res = algorithm.result()
+        front_F = np.asarray(res.F)
+        front_X = np.asarray(res.X, dtype=np.int64)
 
     # Ponto de referência adaptativo: max observado nas fronteiras + margem 10%
     if ref_point is None:

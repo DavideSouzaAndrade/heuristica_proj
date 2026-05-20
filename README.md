@@ -21,8 +21,8 @@ Repositório: https://github.com/DavideSouzaAndrade/heuristica_proj
 | 9 | Proposta | ✅ entregue ([`entregas/proposta/proposta_tsptw.md`](entregas/proposta/proposta_tsptw.md)) |
 | 11 | Checkpoint 1 — single-objective + baseline + 5 sementes | ✅ entregue ([`entregas/cp1/`](entregas/cp1/), tag `cp1`) |
 | 13 | Checkpoint 2 — NSGA-II multiobjetivo | ✅ entregue ([`entregas/cp2/`](entregas/cp2/), tag `cp2`) |
-| 15 | Pré-final — diferencial + relatório 70% | em andamento |
-| 16 | Entrega final | pendente |
+| 15 | Pré-final — diferencial D1 (memetic) + relatório técnico | ✅ entregue ([`entregas/pre_final/`](entregas/pre_final/), tag `pre_final`) |
+| 16 | Entrega final | em andamento |
 
 ## Estrutura do repositório
 
@@ -47,10 +47,15 @@ heuristica_final/
     │   ├── checkpoint1.md
     │   ├── figuras/        # 4 PNGs
     │   └── resultados/
-    └── cp2/                # Semana 13 — Checkpoint 2 (NSGA-II multiobjetivo)
-        ├── checkpoint2.md
-        ├── figuras/        # 4 PNGs (Pareto, HV, NSGA-II vs AG, |front| vs janela)
-        └── resultados/     # fronteiras, HV histórico, summaries
+    ├── cp2/                # Semana 13 — Checkpoint 2 (NSGA-II multiobjetivo)
+    │   ├── checkpoint2.md
+    │   ├── figuras/        # 4 PNGs (Pareto, HV, NSGA-II vs AG, |front| vs janela)
+    │   └── resultados/     # fronteiras, HV histórico, summaries
+    └── pre_final/          # Semana 15 — Pré-final (D1: NSGA-II + 2-opt memetic)
+        ├── relatorio.md    # relatório técnico paper-like (markdown + YAML eisvogel)
+        ├── referencias.bib # 20 referências (BibTeX) para Pandoc citeproc
+        ├── figuras/        # 4 PNGs (comparação puro vs memetic)
+        └── resultados/     # fronteiras, HV histórico do NSGA-II memetic
 ```
 
 O código (`src/`, `data/`, `notebooks/`) é uma única fonte de verdade que evolui ao longo do projeto. Cada entrega vira uma pasta congelada em `entregas/` e uma tag Git (`cp1`, `cp2`, ...) que permite recuperar o estado exato do código naquele momento via `git checkout <tag>`.
@@ -70,6 +75,11 @@ python notebooks/checkpoint1_figures.py
 # Checkpoint 2 (NSGA-II multiobjetivo)
 python -m src.experiment_moo --instance cp1 --seeds 5 --tag cp2
 python notebooks/checkpoint2_figures.py
+
+# Pré-final (NSGA-II + 2-opt memetic, D1)
+python -m src.experiment_moo --instance cp1 --seeds 5 \
+    --memetic-period 100 --memetic-top-k 5 --tag pre_final
+python notebooks/pre_final_figures.py
 ```
 
 Saídas vão direto para `entregas/<tag>/resultados/` e `entregas/<tag>/figuras/`.

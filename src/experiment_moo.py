@@ -158,6 +158,10 @@ def main() -> None:
     parser.add_argument("--pop-size", type=int, default=100)
     parser.add_argument("--n-generations", type=int, default=1500)
     parser.add_argument("--p-mutation", type=float, default=0.3)
+    parser.add_argument("--memetic-period", type=int, default=0,
+                        help="aplica 2-opt Pareto a cada N gerações (0 desabilita)")
+    parser.add_argument("--memetic-top-k", type=int, default=5)
+    parser.add_argument("--memetic-max-iter", type=int, default=5)
     parser.add_argument("--tag", type=str, default="cp2")
     args = parser.parse_args()
 
@@ -165,6 +169,9 @@ def main() -> None:
         pop_size=args.pop_size,
         n_generations=args.n_generations,
         p_mutation=args.p_mutation,
+        memetic_period=args.memetic_period,
+        memetic_top_k=args.memetic_top_k,
+        memetic_max_iter=args.memetic_max_iter,
     )
     seeds = list(range(args.seeds))
 
