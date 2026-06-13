@@ -158,7 +158,7 @@ def run_one(
         "effect_ga_vs_nn": _effect(ga_dists, [nn_eval.distance]),
         "effect_ga_vs_random": _effect(ga_dists, rs_dists),
     }
-    (out_dir / f"{inst.name}_summary.json").write_text(
+    (out_dir / f"{inst.name}_summary_so.json").write_text(
         json.dumps(summary, indent=2)
     )
     return summary
@@ -227,7 +227,7 @@ def main() -> None:
         _print_summary(s)
         summaries.append(s)
 
-    (out_root / "all_summary.json").write_text(json.dumps(summaries, indent=2))
+    (out_root / "all_summary_so.json").write_text(json.dumps(summaries, indent=2))
 
 
 if __name__ == "__main__":

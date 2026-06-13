@@ -1,0 +1,52 @@
+/* CSS para o relatório final em HTML. Otimizado para impressão A4 e leitura
+ * em tela. Layout single-column, tipografia limpa, tabelas com bordas
+ * discretas, figuras centradas. */
+
+@page {
+  size: A4;
+  margin: 2.2cm 2.2cm 2.4cm 2.2cm;
+}
+
+html { font-family: "Source Serif Pro", Georgia, serif; font-size: 10.5pt; }
+body { color: #1a1a1a; line-height: 1.45; max-width: 95%; margin: 0 auto; }
+
+h1 { font-size: 18pt; margin-top: 1.6em; color: #16314f; border-bottom: 2px solid #16314f; padding-bottom: 0.2em; }
+h2 { font-size: 14pt; margin-top: 1.3em; color: #1f4e8c; }
+h3 { font-size: 12pt; margin-top: 1em; color: #2c5fa0; }
+
+.title { font-size: 22pt; font-weight: 700; color: #16314f; margin-bottom: 0.3em; }
+.subtitle { font-size: 14pt; color: #555; margin-bottom: 0.8em; font-style: italic; }
+.author { font-size: 11pt; }
+.date { color: #555; font-size: 10pt; }
+
+p { text-align: justify; margin: 0.5em 0; }
+code, pre { font-family: "JetBrains Mono", Consolas, monospace; font-size: 9.5pt; }
+pre { background: #f5f5f5; border: 1px solid #ddd; padding: 0.7em; overflow-x: auto; }
+:not(pre) > code { background: #f0f0f0; padding: 0.1em 0.3em; border-radius: 3px; }
+
+table { border-collapse: collapse; margin: 1em auto; font-size: 10pt; }
+th, td { padding: 0.35em 0.7em; text-align: right; border-bottom: 1px solid #ccc; }
+th { background: #eef3fa; font-weight: 600; border-bottom: 2px solid #16314f; }
+td:first-child, th:first-child { text-align: left; }
+caption { caption-side: top; font-style: italic; color: #555; margin-bottom: 0.4em; }
+
+figure { text-align: center; margin: 1em 0; }
+figure img { max-width: 95%; height: auto; }
+figcaption { font-size: 9.5pt; color: #555; font-style: italic; margin-top: 0.3em; }
+
+blockquote { margin: 0.8em 1.4em; border-left: 3px solid #1f4e8c; padding: 0.3em 0.9em; color: #444; }
+
+ul, ol { padding-left: 1.6em; }
+li { margin: 0.2em 0; }
+
+a { color: #1a4f8c; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.references p { padding-left: 1.5em; text-indent: -1.5em; margin: 0.3em 0; font-size: 9.5pt; }
+
+@media print {
+  h1 { page-break-before: auto; page-break-after: avoid; }
+  h2, h3 { page-break-after: avoid; }
+  figure, table { page-break-inside: avoid; }
+  pre { page-break-inside: avoid; }
+}

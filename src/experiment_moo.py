@@ -45,6 +45,7 @@ def run_one(
     seeds: list[int],
     config: NSGAConfig,
     out_dir: Path,
+    suffix: str = "",
 ) -> dict:
     inst = load_dumas(instance_path)
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -94,16 +95,17 @@ def run_one(
         history_hv_all.append(history_hv)
 
     # CSV de resumo por semente
-    with (out_dir / f"{inst.name}_nsga.csv").open("w", newline="") as fh:
+    with (out_dir / f"{inst.name}_nsga{suffix}.csv").open("w", newline="") as fh:
         w = csv.DictWriter(fh, fieldnames=list(rows[0].keys()))
         w.writeheader()
         w.writerows(rows)
 
     # NPZ com fronteiras
-    np.savez(out_dir / f"{inst.name}_fronts.npz", **front_blobs)
+    np.savez(out_dir / f"{inst.name}_fronts{suffix}.npz", **front_blobs)
 
     # NPY com histórico HV (n_seeds × n_gens)
-    np.save(out_dir / f"{inst.name}_hv_history.npy", np.array(history_hv_all))
+    np.save(out_dir / f"{inst.name}_hv_history{suffix}.npy",
+            np.array(history_hv_all))
 
     summary = {
         "instance": inst.name,
@@ -126,7 +128,7 @@ def run_one(
         )),
         "time_s": _summary([r["time_s"] for r in rows]),
     }
-    (out_dir / f"{inst.name}_summary.json").write_text(
+    (out_dir / f"{inst.name}_summary{suffix}.json").write_text(
         json.dumps(summary, indent=2)
     )
     return summary
@@ -163,6 +165,8 @@ def main() -> None:
     parser.add_argument("--memetic-top-k", type=int, default=5)
     parser.add_argument("--memetic-max-iter", type=int, default=5)
     parser.add_argument("--tag", type=str, default="cp2")
+    parser.add_argument("--suffix", type=str, default="",
+                        help="sufixo nos arquivos de saída (ex: _memetic)")
     args = parser.parse_args()
 
     cfg = NSGAConfig(
@@ -190,11 +194,13 @@ def main() -> None:
     out_root.mkdir(parents=True, exist_ok=True)
     summaries = []
     for f in files:
-        s = run_one(f, seeds, cfg, out_root / f.stem)
+        s = run_one(f, seeds, cfg, out_root / f.stem, suffix=args.suffix)
         _print_summary(s)
         summaries.append(s)
 
-    (out_root / "all_summary.json").write_text(json.dumps(summaries, indent=2))
+    (out_root / f"all_summary{args.suffix}.json").write_text(
+        json.dumps(summaries, indent=2)
+    )
 
 
 if __name__ == "__main__":

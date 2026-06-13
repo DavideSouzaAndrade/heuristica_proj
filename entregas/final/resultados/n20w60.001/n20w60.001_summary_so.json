@@ -1,0 +1,85 @@
+{
+  "instance": "n20w60.001",
+  "n_customers": 20,
+  "baseline_nn": {
+    "distance": 393.0,
+    "violation": 0.0,
+    "n_violations": 0,
+    "feasible": true
+  },
+  "random": {
+    "feasible_rate": 0.0,
+    "distance": {
+      "mean": 412.3,
+      "std": 25.289655329139357,
+      "median": 413.5,
+      "min": 376.0,
+      "max": 450.0
+    },
+    "violation": {
+      "mean": 810.8,
+      "std": 90.7435948152816,
+      "median": 804.0,
+      "min": 693.0,
+      "max": 998.0
+    },
+    "fitness": {
+      "mean": 811212.3,
+      "std": 90756.6556825326,
+      "median": 804437.0,
+      "min": 693421.0,
+      "max": 998450.0
+    }
+  },
+  "ga_config": {
+    "pop_size": 200,
+    "n_generations": 1500,
+    "lam": 1000.0,
+    "p_mutation": 0.3,
+    "tournament_k": 3,
+    "p_crossover": 0.9,
+    "elite": 2,
+    "mutation_op": "inversion"
+  },
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "feasible_rate": 1.0,
+  "distance": {
+    "mean": 337.2,
+    "std": 4.638007234913623,
+    "median": 335.0,
+    "min": 335.0,
+    "max": 346.0
+  },
+  "violation": {
+    "mean": 0.0,
+    "std": 0.0,
+    "median": 0.0,
+    "min": 0.0,
+    "max": 0.0
+  },
+  "fitness": {
+    "mean": 337.2,
+    "std": 4.638007234913623,
+    "median": 335.0,
+    "min": 335.0,
+    "max": 346.0
+  },
+  "time_s": {
+    "mean": 25.951119159988593,
+    "std": 0.6390737761515742,
+    "median": 25.66311419993872,
+    "min": 25.35603390005417,
+    "max": 27.26287079998292
+  }
+}

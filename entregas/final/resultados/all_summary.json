@@ -1,0 +1,357 @@
+[
+  {
+    "instance": "n20w20.001",
+    "n_customers": 20,
+    "nsga_config": {
+      "pop_size": 100,
+      "n_generations": 1500,
+      "p_mutation": 0.3,
+      "memetic_period": 0,
+      "memetic_top_k": 5,
+      "memetic_max_iter": 5
+    },
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "ref_point_global": [
+      416.8,
+      6192.900000000001
+    ],
+    "front_size": {
+      "mean": 63.0,
+      "std": 3.711842908553348,
+      "median": 63.5,
+      "min": 56.0,
+      "max": 69.0
+    },
+    "hypervolume": {
+      "mean": 1195088.9900000012,
+      "std": 9873.48769450037,
+      "median": 1194897.5200000014,
+      "min": 1173860.6200000006,
+      "max": 1208020.5200000007
+    },
+    "best_dist": {
+      "mean": 200.1,
+      "std": 3.784471194529326,
+      "median": 198.0,
+      "min": 198.0,
+      "max": 209.0
+    },
+    "n_feasible_solutions": {
+      "mean": 0.9,
+      "std": 0.31622776601683794,
+      "median": 1.0,
+      "min": 0.0,
+      "max": 1.0
+    },
+    "best_feasible_dist": {
+      "mean": 378.0,
+      "std": 0.0,
+      "median": 378.0,
+      "min": 378.0,
+      "max": 378.0
+    },
+    "feasible_rate": 0.9,
+    "time_s": {
+      "mean": 101.9393248199951,
+      "std": 1.6200176049293826,
+      "median": 101.49237049999647,
+      "min": 99.87031829997431,
+      "max": 105.09060330002103
+    }
+  },
+  {
+    "instance": "n20w40.001",
+    "n_customers": 20,
+    "nsga_config": {
+      "pop_size": 100,
+      "n_generations": 1500,
+      "p_mutation": 0.3,
+      "memetic_period": 0,
+      "memetic_top_k": 5,
+      "memetic_max_iter": 5
+    },
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "ref_point_global": [
+      280.40000000000003,
+      1219.8000000000002
+    ],
+    "front_size": {
+      "mean": 47.3,
+      "std": 3.3015148038438356,
+      "median": 47.5,
+      "min": 40.0,
+      "max": 51.0
+    },
+    "hypervolume": {
+      "mean": 125968.70000000007,
+      "std": 2390.9923601346354,
+      "median": 127435.32000000007,
+      "min": 121893.32000000007,
+      "max": 127453.32000000007
+    },
+    "best_dist": {
+      "mean": 157.0,
+      "std": 0.0,
+      "median": 157.0,
+      "min": 157.0,
+      "max": 157.0
+    },
+    "n_feasible_solutions": {
+      "mean": 0.9,
+      "std": 0.31622776601683794,
+      "median": 1.0,
+      "min": 0.0,
+      "max": 1.0
+    },
+    "best_feasible_dist": {
+      "mean": 254.0,
+      "std": 0.0,
+      "median": 254.0,
+      "min": 254.0,
+      "max": 254.0
+    },
+    "feasible_rate": 0.9,
+    "time_s": {
+      "mean": 104.13027063999326,
+      "std": 1.6145484851773806,
+      "median": 103.63539230002789,
+      "min": 101.81622249993961,
+      "max": 107.0063555999659
+    }
+  },
+  {
+    "instance": "n20w60.001",
+    "n_customers": 20,
+    "nsga_config": {
+      "pop_size": 100,
+      "n_generations": 1500,
+      "p_mutation": 0.3,
+      "memetic_period": 0,
+      "memetic_top_k": 5,
+      "memetic_max_iter": 5
+    },
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "ref_point_global": [
+      369.50000000000006,
+      3827.9
+    ],
+    "front_size": {
+      "mean": 41.7,
+      "std": 3.7133393177689658,
+      "median": 41.0,
+      "min": 36.0,
+      "max": 46.0
+    },
+    "hypervolume": {
+      "mean": 645251.6100000001,
+      "std": 3383.343093976064,
+      "median": 646501.3500000001,
+      "min": 636342.5500000002,
+      "max": 647889.4500000002
+    },
+    "best_dist": {
+      "mean": 183.6,
+      "std": 0.8432740427115678,
+      "median": 183.0,
+      "min": 183.0,
+      "max": 185.0
+    },
+    "n_feasible_solutions": {
+      "mean": 1.0,
+      "std": 0.0,
+      "median": 1.0,
+      "min": 1.0,
+      "max": 1.0
+    },
+    "best_feasible_dist": {
+      "mean": 335.0,
+      "std": 0.0,
+      "median": 335.0,
+      "min": 335.0,
+      "max": 335.0
+    },
+    "feasible_rate": 1.0,
+    "time_s": {
+      "mean": 100.1515415900154,
+      "std": 1.370393292982673,
+      "median": 99.76754325005459,
+      "min": 98.8714067999972,
+      "max": 103.52820960001554
+    }
+  },
+  {
+    "instance": "n20w80.001",
+    "n_customers": 20,
+    "nsga_config": {
+      "pop_size": 100,
+      "n_generations": 1500,
+      "p_mutation": 0.3,
+      "memetic_period": 0,
+      "memetic_top_k": 5,
+      "memetic_max_iter": 5
+    },
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "ref_point_global": [
+      394.8,
+      3382.4
+    ],
+    "front_size": {
+      "mean": 49.6,
+      "std": 3.1692971530679235,
+      "median": 49.0,
+      "min": 45.0,
+      "max": 55.0
+    },
+    "hypervolume": {
+      "mean": 593419.2400000005,
+      "std": 21686.318561854347,
+      "median": 592976.1200000006,
+      "min": 557332.1200000002,
+      "max": 621921.5200000007
+    },
+    "best_dist": {
+      "mean": 180.0,
+      "std": 0.0,
+      "median": 180.0,
+      "min": 180.0,
+      "max": 180.0
+    },
+    "n_feasible_solutions": {
+      "mean": 0.2,
+      "std": 0.42163702135578396,
+      "median": 0.0,
+      "min": 0.0,
+      "max": 1.0
+    },
+    "best_feasible_dist": {
+      "mean": 331.0,
+      "std": 2.8284271247461903,
+      "median": 331.0,
+      "min": 329.0,
+      "max": 333.0
+    },
+    "feasible_rate": 0.2,
+    "time_s": {
+      "mean": 103.41411168999039,
+      "std": 1.3290047966426388,
+      "median": 103.73446230002446,
+      "min": 101.84605319995899,
+      "max": 105.10187729995232
+    }
+  },
+  {
+    "instance": "n20w100.001",
+    "n_customers": 20,
+    "nsga_config": {
+      "pop_size": 100,
+      "n_generations": 1500,
+      "p_mutation": 0.3,
+      "memetic_period": 0,
+      "memetic_top_k": 5,
+      "memetic_max_iter": 5
+    },
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "ref_point_global": [
+      261.70000000000005,
+      1791.8000000000002
+    ],
+    "front_size": {
+      "mean": 16.4,
+      "std": 1.7126976771553506,
+      "median": 17.0,
+      "min": 13.0,
+      "max": 18.0
+    },
+    "hypervolume": {
+      "mean": 94737.74000000009,
+      "std": 1081.1044731096868,
+      "median": 95246.7600000001,
+      "min": 92959.0600000001,
+      "max": 95914.26000000008
+    },
+    "best_dist": {
+      "mean": 191.4,
+      "std": 1.2649110640673518,
+      "median": 191.0,
+      "min": 191.0,
+      "max": 195.0
+    },
+    "n_feasible_solutions": {
+      "mean": 1.0,
+      "std": 0.0,
+      "median": 1.0,
+      "min": 1.0,
+      "max": 1.0
+    },
+    "best_feasible_dist": {
+      "mean": 237.0,
+      "std": 0.0,
+      "median": 237.0,
+      "min": 237.0,
+      "max": 237.0
+    },
+    "feasible_rate": 1.0,
+    "time_s": {
+      "mean": 100.79396566000068,
+      "std": 0.71291690229794,
+      "median": 100.80402895004954,
+      "min": 99.86197760002688,
+      "max": 102.3242973999586
+    }
+  }
+]

@@ -1,0 +1,71 @@
+{
+  "instance": "n20w60.001",
+  "n_customers": 20,
+  "nsga_config": {
+    "pop_size": 100,
+    "n_generations": 1500,
+    "p_mutation": 0.3,
+    "memetic_period": 100,
+    "memetic_top_k": 5,
+    "memetic_max_iter": 5
+  },
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "ref_point_global": [
+    369.50000000000006,
+    4196.400000000001
+  ],
+  "front_size": {
+    "mean": 44.7,
+    "std": 4.001388647846034,
+    "median": 45.0,
+    "min": 36.0,
+    "max": 52.0
+  },
+  "hypervolume": {
+    "mean": 713972.9800000002,
+    "std": 2809.548516438583,
+    "median": 715245.1000000002,
+    "min": 709695.4000000003,
+    "max": 716501.6000000002
+  },
+  "best_dist": {
+    "mean": 183.8,
+    "std": 0.9189365834726815,
+    "median": 184.0,
+    "min": 183.0,
+    "max": 186.0
+  },
+  "n_feasible_solutions": {
+    "mean": 1.0,
+    "std": 0.0,
+    "median": 1.0,
+    "min": 1.0,
+    "max": 1.0
+  },
+  "best_feasible_dist": {
+    "mean": 335.0,
+    "std": 0.0,
+    "median": 335.0,
+    "min": 335.0,
+    "max": 335.0
+  },
+  "feasible_rate": 1.0,
+  "time_s": {
+    "mean": 114.69025806003484,
+    "std": 27.569736421237266,
+    "median": 104.91446115000872,
+    "min": 97.16135060007218,
+    "max": 189.423647299991
+  }
+}
