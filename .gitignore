@@ -15,3 +15,6 @@ entregas/**/resultados/**/*_random_history_best.npy
 # Pacotes zipados das entregas e da pasta de apresentação (derivados)
 apresentacao.zip
 entregas/*.zip
+
+# Material de apresentação é interno do grupo (não vai pro repo público)
+apresentacao/
