@@ -11,3 +11,7 @@ env/
 
 # Heavy random search history arrays — regeneráveis via `src/experiment.py`
 entregas/**/resultados/**/*_random_history_best.npy
+
+# Pacotes zipados das entregas e da pasta de apresentação (derivados)
+apresentacao.zip
+entregas/*.zip

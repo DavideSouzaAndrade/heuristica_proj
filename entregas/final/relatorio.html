@@ -643,35 +643,44 @@ naturalmente combináveis: HPO pode buscar os parâmetros memetic ótimos
 em paralelo aos parâmetros do NSGA-II.</p>
 <h2 id="apêndice-a-contribuições-da-equipe">Apêndice A — Contribuições
 da equipe</h2>
-<p>Conforme a Sec. 8 do enunciado, todos os integrantes participaram da
-definição do problema, da formulação matemática e da revisão final do
-relatório. A distribuição operacional por componente foi a seguinte:</p>
+<p>Conforme a Sec. 8 do enunciado, declaramos que <strong>todos os cinco
+integrantes participaram de todas as etapas do projeto de maneira
+paralela e colaborativa</strong>, com revezamento ao longo das dez
+semanas:</p>
 <ul>
-<li><strong>Frederico Barbosa Relvas:</strong> coordenação do
-diferencial D1 (busca local 2-opt sob dominância de Pareto), execução
-dos experimentos com 10 sementes, validação dos resultados contra o
-ótimo conhecido em literatura, e redação das Seções 4.4 e 6.</li>
-<li><strong>Cindy Stephanie Gomes Rabelo:</strong> baseline Nearest
-Neighbor com critério <code>urgency</code>, busca aleatória como
-referência inferior, análise estatística (Wilcoxon, Cliff’s <span class="math inline">\(\delta\)</span>, Hedges’ <span class="math inline">\(g\)</span>) e tabelas da Seção 5.</li>
-<li><strong>Davi de Souza Andrade:</strong> estrutura do repositório
-Python, módulo <code>instance.py</code> (loader Dumas), módulo
-<code>evaluation.py</code> (função objetivo TSPTW), pipeline
-reprodutível (experiment runners), versionamento via Git tags por
-checkpoint, e redação das Seções 1, 2 e 7.</li>
-<li><strong>Marcos Vinicius Moreira dos Anjos:</strong> implementação do
-Algoritmo Genético em <code>src/ga.py</code> (OX, mutação por inversão,
-torneio, elitismo), <em>sweep</em> de <span class="math inline">\(\lambda\)</span> no Checkpoint 1 e plano
-experimental do Checkpoint 1. Redação da Seção 3 e revisão geral.</li>
-<li><strong>João Guilherme da Silva Chaveiro:</strong> integração com
-<code>pymoo</code> (NSGA-II em <code>src/nsga.py</code>), cálculo de
-hypervolume com ponto-ref unificado, scripts de figuras
-(<code>notebooks/*_figures.py</code>), e validação visual de todas as
-figuras produzidas.</li>
+<li><strong>Frederico Barbosa Relvas (202403902)</strong></li>
+<li><strong>Cindy Stephanie Gomes Rabelo (202403898)</strong></li>
+<li><strong>Davi de Souza Andrade (202403901)</strong></li>
+<li><strong>Marcos Vinicius Moreira dos Anjos (202400762)</strong></li>
+<li><strong>João Guilherme da Silva Chaveiro (202403908)</strong></li>
 </ul>
-<p>Avaliação majoritariamente conjunta. Disputas técnicas foram
-resolvidas via discussão por canal próprio da equipe e registradas no
-histórico de <em>commits</em> do repositório.</p>
+<p>A divisão de tarefas adotada foi <strong>horizontal</strong>, não
+compartimentada por componente: em cada semana o grupo se reorganizava
+conforme a entrega vigente e a disponibilidade de cada integrante, com
+substituições recíprocas sempre que necessário. Em particular:</p>
+<ul>
+<li><strong>Modelagem matemática</strong> (representação, função
+objetivo, restrições), <strong>escolha das instâncias</strong> e
+<strong>discussão das limitações</strong> foram debatidas por todos em
+reuniões semanais.</li>
+<li><strong>Implementação dos algoritmos</strong> (Algoritmo Genético,
+NSGA-II, busca local 2-opt Pareto), <strong>execução dos
+experimentos</strong> (200 corridas controladas com 10 sementes),
+<strong>análise estatística</strong> (Wilcoxon, Bonferroni, Cliff’s
+<span class="math inline">\(\delta\)</span>, Hedges’ <span class="math inline">\(g\)</span>) e <strong>geração das figuras</strong>
+foram tarefas rotativas: cada integrante atuou em mais de uma delas ao
+longo do semestre, substituindo colegas quando surgia conflito de
+agenda.</li>
+<li><strong>Redação do relatório técnico</strong>, <strong>construção
+dos slides</strong> e <strong>revisão final</strong> envolveram todos os
+integrantes em diferentes seções, com leitura cruzada antes da
+entrega.</li>
+</ul>
+<p>A avaliação dentro do grupo é considerada <strong>majoritariamente
+conjunta</strong>, sem desbalanço significativo de contribuição.
+Eventuais dúvidas sobre autoria específica de trechos de código podem
+ser dirimidas pelo histórico de <em>commits</em> do repositório
+público.</p>
 <h2 id="apêndice-b-reprodutibilidade">Apêndice B —
 Reprodutibilidade</h2>
 <p>Código e dados públicos em
@@ -700,20 +709,6 @@ problema, da formulação, dos algoritmos, dos hiperparâmetros, do
 diferencial), interpretação dos resultados e elaboração das conclusões
 são da equipe. Toda referência citada foi verificada manualmente.</p>
 <h2 id="referências">Referências</h2>
-<p>(usar Pandoc com <code>--citeproc</code> e arquivo <code>.bib</code>
-na build do PDF; a lista abaixo lista as principais)</p>
-<p><span class="citation" data-cites="solomon1987algorithms dumas1995optimal gendreau1998generalized dasilva2010general cordeau2002guide goldberg1985alleles davis1985applying potvin1996vehicle gambardella1996solving glover1989tabu deb2002fast zitzler1999multiobjective blank2020pymoo moscato1989evolution paquete2004on garcia2010advanced romano2006appropriate hedges1981distribution lopezibanez2024tsptw">(<a href="#ref-solomon1987algorithms" role="doc-biblioref">Solomon 1987</a>;
-<a href="#ref-dumas1995optimal" role="doc-biblioref">Dumas et al.
-1995</a>; <a href="#ref-gendreau1998generalized" role="doc-biblioref">Gendreau et al. 1998</a>; <a href="#ref-dasilva2010general" role="doc-biblioref">Silva e Urrutia
-2010</a>; <a href="#ref-cordeau2002guide" role="doc-biblioref">Cordeau
-et al. 2002</a>; <a href="#ref-goldberg1985alleles" role="doc-biblioref">Goldberg e Lingle 1985</a>; <a href="#ref-davis1985applying" role="doc-biblioref">Davis 1985</a>; <a href="#ref-potvin1996vehicle" role="doc-biblioref">Potvin e Bengio
-1996</a>; <a href="#ref-gambardella1996solving" role="doc-biblioref">Gambardella e Dorigo 1996</a>; <a href="#ref-glover1989tabu" role="doc-biblioref">Glover 1989</a>; <a href="#ref-deb2002fast" role="doc-biblioref">Deb et al. 2002</a>; <a href="#ref-zitzler1999multiobjective" role="doc-biblioref">Zitzler e
-Thiele 1999</a>; <a href="#ref-blank2020pymoo" role="doc-biblioref">Blank e Deb 2020</a>; <a href="#ref-moscato1989evolution" role="doc-biblioref">Moscato 1989</a>;
-<a href="#ref-paquete2004on" role="doc-biblioref">Paquete et al.
-2004</a>; <a href="#ref-garcia2010advanced" role="doc-biblioref">García
-et al. 2010</a>; <a href="#ref-romano2006appropriate" role="doc-biblioref">Romano et al. 2006</a>; <a href="#ref-hedges1981distribution" role="doc-biblioref">Hedges 1981</a>;
-<a href="#ref-lopezibanez2024tsptw" role="doc-biblioref">López-Ibáñez
-2024</a>)</span></p>
 <div id="refs" class="references csl-bib-body hanging-indent" role="list">
 <div id="ref-blank2020pymoo" class="csl-entry" role="listitem">
 Blank, Julian, e Kalyanmoy Deb. 2020. <span>“pymoo: Multi-Objective

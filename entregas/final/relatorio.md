@@ -30,6 +30,15 @@ keywords:
   - hibridização memetic
   - busca local 2-opt
   - otimização multiobjetivo
+nocite: |
+  @solomon1987algorithms, @dumas1995optimal, @gendreau1998generalized,
+  @dasilva2010general, @cordeau2002guide,
+  @goldberg1985alleles, @davis1985applying, @potvin1996vehicle,
+  @gambardella1996solving, @glover1989tabu,
+  @deb2002fast, @zitzler1999multiobjective, @blank2020pymoo,
+  @moscato1989evolution, @paquete2004on,
+  @garcia2010advanced, @romano2006appropriate, @hedges1981distribution,
+  @lopezibanez2024tsptw
 ---
 
 # 1. Introdução
@@ -284,15 +293,21 @@ Como trabalhos futuros, quatro direções se destacam: (a) **D1 v2** — substit
 
 ## Apêndice A — Contribuições da equipe
 
-Conforme a Sec.\ 8 do enunciado, todos os integrantes participaram da definição do problema, da formulação matemática e da revisão final do relatório. A distribuição operacional por componente foi a seguinte:
+Conforme a Sec.\ 8 do enunciado, declaramos que **todos os cinco integrantes participaram de todas as etapas do projeto de maneira paralela e colaborativa**, com revezamento ao longo das dez semanas:
 
-- **Frederico Barbosa Relvas:** coordenação do diferencial D1 (busca local 2-opt sob dominância de Pareto), execução dos experimentos com 10 sementes, validação dos resultados contra o ótimo conhecido em literatura, e redação das Seções 4.4 e 6.
-- **Cindy Stephanie Gomes Rabelo:** baseline Nearest Neighbor com critério `urgency`, busca aleatória como referência inferior, análise estatística (Wilcoxon, Cliff's $\delta$, Hedges' $g$) e tabelas da Seção 5.
-- **Davi de Souza Andrade:** estrutura do repositório Python, módulo `instance.py` (loader Dumas), módulo `evaluation.py` (função objetivo TSPTW), pipeline reprodutível (experiment runners), versionamento via Git tags por checkpoint, e redação das Seções 1, 2 e 7.
-- **Marcos Vinicius Moreira dos Anjos:** implementação do Algoritmo Genético em `src/ga.py` (OX, mutação por inversão, torneio, elitismo), *sweep* de $\lambda$ no Checkpoint 1 e plano experimental do Checkpoint 1. Redação da Seção 3 e revisão geral.
-- **João Guilherme da Silva Chaveiro:** integração com `pymoo` (NSGA-II em `src/nsga.py`), cálculo de hypervolume com ponto-ref unificado, scripts de figuras (`notebooks/*_figures.py`), e validação visual de todas as figuras produzidas.
+- **Frederico Barbosa Relvas (202403902)**
+- **Cindy Stephanie Gomes Rabelo (202403898)**
+- **Davi de Souza Andrade (202403901)**
+- **Marcos Vinicius Moreira dos Anjos (202400762)**
+- **João Guilherme da Silva Chaveiro (202403908)**
 
-Avaliação majoritariamente conjunta. Disputas técnicas foram resolvidas via discussão por canal próprio da equipe e registradas no histórico de *commits* do repositório.
+A divisão de tarefas adotada foi **horizontal**, não compartimentada por componente: em cada semana o grupo se reorganizava conforme a entrega vigente e a disponibilidade de cada integrante, com substituições recíprocas sempre que necessário. Em particular:
+
+- **Modelagem matemática** (representação, função objetivo, restrições), **escolha das instâncias** e **discussão das limitações** foram debatidas por todos em reuniões semanais.
+- **Implementação dos algoritmos** (Algoritmo Genético, NSGA-II, busca local 2-opt Pareto), **execução dos experimentos** (200 corridas controladas com 10 sementes), **análise estatística** (Wilcoxon, Bonferroni, Cliff's $\delta$, Hedges' $g$) e **geração das figuras** foram tarefas rotativas: cada integrante atuou em mais de uma delas ao longo do semestre, substituindo colegas quando surgia conflito de agenda.
+- **Redação do relatório técnico**, **construção dos slides** e **revisão final** envolveram todos os integrantes em diferentes seções, com leitura cruzada antes da entrega.
+
+A avaliação dentro do grupo é considerada **majoritariamente conjunta**, sem desbalanço significativo de contribuição. Eventuais dúvidas sobre autoria específica de trechos de código podem ser dirimidas pelo histórico de *commits* do repositório público.
 
 ## Apêndice B — Reprodutibilidade
 
@@ -316,11 +331,5 @@ Conforme política da disciplina (Sec. 11 do enunciado), declaramos: Claude Code
 
 ## Referências
 
-(usar Pandoc com `--citeproc` e arquivo `.bib` na build do PDF; a lista abaixo lista as principais)
-
-[@solomon1987algorithms; @dumas1995optimal; @gendreau1998generalized; @dasilva2010general; @cordeau2002guide;
-@goldberg1985alleles; @davis1985applying; @potvin1996vehicle; @gambardella1996solving; @glover1989tabu;
-@deb2002fast; @zitzler1999multiobjective; @blank2020pymoo;
-@moscato1989evolution; @paquete2004on;
-@garcia2010advanced; @romano2006appropriate; @hedges1981distribution;
-@lopezibanez2024tsptw]
+::: {#refs}
+:::
